@@ -1,0 +1,18 @@
+%define lookup-function-name lookupGeneratedInit
+%define class-name HybdridsmsBindings
+%{
+
+#include <string.h>
+#include <v8.h>
+#include <KrollBindings.h>
+
+#include "com.hybrid.sms.HybdridsmsModule.h"
+#include "com.hybrid.sms.ExampleProxy.h"
+
+
+%}
+struct titanium::bindings::BindEntry;
+%%
+com.hybrid.sms.HybdridsmsModule, ::com::hybrid::sms::HybdridsmsModule::bindProxy, ::com::hybrid::sms::HybdridsmsModule::dispose
+com.hybrid.sms.ExampleProxy, ::com::hybrid::sms::hybdridsms::ExampleProxy::bindProxy, ::com::hybrid::sms::hybdridsms::ExampleProxy::dispose
+%%
